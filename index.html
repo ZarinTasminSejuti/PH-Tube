@@ -23,12 +23,12 @@
 
 </head>
 
-<body class="font-inter" onload="loadCategory()">
+<body class="font-inter" onload="loadCategory(), loadAllContent()">
     <!-- header section -->
     <header class="container mx-auto bg-white lg:mt-10 p-4 lg:p-0">
         <div class="flex justify-between items-center p-3">
             <img src="./images/Logo.png" alt="">
-            <button class="btn normal-case font-medium text-lg">Sort by view</button>
+            <button class="btn normal-case font-medium text-lg" onclick="sortByView()">Sort by view</button>
             <a href="blog.html"><button class="btn normal-case hover:text-black font-medium text-white text-lg bg-red-500">Blog</button></a>
         </div>
 
@@ -48,7 +48,7 @@
 
 
         <!-- all content section -->
-        <section>
+        <section id="section">
             <div id="all-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
 
             </div>
