@@ -75,6 +75,7 @@ const toggleDisplayContent = (targetedCategoryForDisplay) => {
 
 
 //   //fetching all content data
+let content = "";
 const loadAllContent = async (category_id) => {
 
     let link = 'https://openapi.programming-hero.com/api/videos/category/1000';
@@ -86,26 +87,23 @@ const loadAllContent = async (category_id) => {
 
     const res = await fetch(link);
     const data = await res.json();
-    const content = data.data;
+    content = data.data;
 
-    //For sorting
-
-    displayAllContent(content);
-    sortByView(content);
-     
+    displayAllContent(content); 
 }
 
-  //For sorting
-const sortByView = (finalContent) => {
-    const x = finalContent.sort((a, b) => parseFloat(b.others.views.replace("K", "") - parseFloat(a.others.views.replace("K", ""))));
-    displayAllContent(x);
-    console.log("h");
+
+
+  //Handle sort by views
+const sortByView = () => {
+    const sortedArray = content.sort((a, b) => parseFloat(b.others.views.replace("K", "") - parseFloat(a.others.views.replace("K", ""))));
+    displayAllContent(sortedArray); 
 }
 
 
 
 const displayAllContent = (finalContentArray) => {
-     
+
     const allContentContainer = document.getElementById('all-container');
     allContentContainer.innerHTML = "";
     
