@@ -30,7 +30,7 @@ const displayCategory = (items) => {
         const li = document.createElement('li');
         li.innerText = categoryName;
         categoryUl.appendChild(li);
-        li.classList = `bg-gray-200 text-black px-4 py-1 mx-5 rounded`;
+        li.classList = `bg-gray-200 text-black px-4 py-1 mx-2 lg:mx-5 rounded`;
         li.setAttribute("id", categoryName);
         li.setAttribute("onclick", "handleCategoryClick(this)");
 
